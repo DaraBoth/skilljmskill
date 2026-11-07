@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SkillJM Skill</title>
+<meta name="description" content="Free Claude Code skills for Cambodian IT students and developers. Install with one command.">
+<meta property="og:title" content="SkillJM Skill">
+<meta property="og:description" content="36 free Claude Code skills for Cambodian IT students and developers. One command to install.">
+<meta property="og:url" content="https://daraboth.github.io/skilljmskill/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  --bg:#F6F7FB; --surface:#FFFFFF; --ink:#141A2E; --muted:#4A5370; --line:#D9DDEA;
+  --blue:#1F3FA8; --blue-ink:#FFFFFF; --red:#C8102E; --code-bg:#0F1530; --code-ink:#E8ECFA; --pick:#E6EBFA;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0C1022; --surface:#141A33; --ink:#E9ECF7; --muted:#A9B0CC; --line:#2A3253;
+  --blue:#8EA6FF; --blue-ink:#0C1022; --red:#FF6B7F; --code-bg:#070A18; --code-ink:#E8ECFA; --pick:#1E2750;
+}}
+:root[data-theme="dark"]{
+  --bg:#0C1022; --surface:#141A33; --ink:#E9ECF7; --muted:#A9B0CC; --line:#2A3253;
+  --blue:#8EA6FF; --blue-ink:#0C1022; --red:#FF6B7F; --code-bg:#070A18; --code-ink:#E8ECFA; --pick:#1E2750;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 'Kantumruy Pro',system-ui,sans-serif}
+a{color:var(--blue)}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+header{padding:56px 0 28px;border-bottom:1px solid var(--line)}
+.mark{display:inline-flex;gap:4px;margin-bottom:18px}
+.mark i{display:block;width:28px;height:6px;border-radius:3px;background:var(--blue)}
+.mark i:nth-child(2){background:var(--red)}
+h1{margin:0;font-size:clamp(2.1rem,5vw,3.2rem);line-height:1.1;letter-spacing:-.02em;text-wrap:balance}
+.lead{max-width:62ch;color:var(--muted);margin:14px 0 0}
+.km{font-weight:400;color:var(--muted)}
+h2{font-size:1.35rem;margin:44px 0 6px}
+h3{font-size:1.05rem;margin:30px 0 8px}
+.tabs{display:flex;gap:6px;margin:16px 0 0;flex-wrap:wrap}
+.tabs button{font:inherit;font-size:.95rem;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--blue);color:var(--blue-ink);border-color:var(--blue)}
+.cmd{position:relative;margin:10px 0 0;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px 92px 16px 18px;overflow-x:auto}
+.cmd code{font:14px/1.5 'JetBrains Mono',ui-monospace,monospace;white-space:pre}
+.copy{position:absolute;top:10px;right:10px;font:600 13px 'Kantumruy Pro',sans-serif;padding:6px 12px;border-radius:6px;border:0;background:var(--blue);color:var(--blue-ink);cursor:pointer}
+.note{color:var(--muted);font-size:.95rem;margin:10px 0 0;max-width:70ch}
+.steps{padding-left:22px;max-width:70ch}
+.steps li{margin:4px 0}
+.skills{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.skills li{display:grid;grid-template-columns:minmax(200px,260px) 1fr;gap:14px;padding:10px 0;border-bottom:1px solid var(--line);align-items:start}
+.pick{font:inherit;text-align:left;background:none;border:1px solid transparent;border-radius:6px;padding:2px 6px;margin:-3px 0 0 -7px;cursor:pointer;color:var(--ink)}
+.pick code{font:600 14px 'JetBrains Mono',monospace}
+.pick:hover{border-color:var(--line)}
+.pick[aria-pressed="true"]{background:var(--pick);border-color:var(--blue)}
+.pick[aria-pressed="true"] code::before{content:"+ ";color:var(--blue)}
+.skills span{color:var(--muted);font-size:.95rem}
+#picked{display:none}
+#picked.on{display:block}
+button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+footer{margin:56px 0 40px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}
+@media (max-width:640px){.skills li{grid-template-columns:1fr;gap:2px}header{padding-top:36px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="mark" aria-hidden="true"><i></i><i></i><i></i></div>
+  <h1>SkillJM Skill</h1>
+  <p class="lead">36 free <a href="https://claude.com/claude-code">Claude Code</a> skills for Cambodian IT students and developers. One command installs them.<br>
+  <span class="km">skill ឥតគិតថ្លៃ 36 សម្រាប់ Claude Code សម្រាប់និស្សិត IT និង developer ខ្មែរ។ ដំឡើងដោយពាក្យបញ្ជាតែមួយ។</span></p>
+</div></header>
+
+<main class="wrap">
+  <h2>Install <span class="km">ដំឡើង</span></h2>
+  <div class="tabs" role="tablist" aria-label="Your computer">
+    <button role="tab" data-os="win" aria-selected="true">Windows</button>
+    <button role="tab" data-os="nix" aria-selected="false">Mac / Linux</button>
+  </div>
+  <p class="note" data-for="win">Open <b>PowerShell</b> and paste this. <span class="km">បើក PowerShell ហើយបិទភ្ជាប់ពាក្យបញ្ជានេះ។</span></p>
+  <p class="note" data-for="nix" hidden>Open <b>Terminal</b> and paste this. <span class="km">បើក Terminal ហើយបិទភ្ជាប់ពាក្យបញ្ជានេះ។</span></p>
+  <div class="cmd"><code id="cmd-all"></code><button class="copy" data-copy="cmd-all">Copy</button></div>
+
+  <div id="picked">
+    <h3>Only the skills you picked <span class="km">តែ skill ដែលអ្នកបានជ្រើស</span></h3>
+    <div class="cmd"><code id="cmd-pick"></code><button class="copy" data-copy="cmd-pick">Copy</button></div>
+  </div>
+  <p class="note">Want only some? Click skill names below to build your own command. Running it again updates the skills; your older copies are moved to <code>.skilljmskill-backup</code>, never deleted.<br>
+  <span class="km">ចង់បានតែខ្លះ? ចុចឈ្មោះ skill ខាងក្រោម ដើម្បីបង្កើតពាក្យបញ្ជារបស់អ្នក។</span></p>
+
+  <h2>Then <span class="km">បន្ទាប់មក</span></h2>
+  <ol class="steps">
+    <li>Close Claude Code and open it again. <span class="km">បិទ Claude Code ហើយបើកវាឡើងវិញ។</span></li>
+    <li>Type <code>/</code> and you will see the skills, for example <code>/debugging</code>. <span class="km">វាយ <code>/</code> ដើម្បីមើល skill ។</span></li>
+    <li>Or just ask: Claude picks the right skill when your request matches it. <span class="km">ឬគ្រាន់តែសួរ Claude នឹងជ្រើស skill ដោយខ្លួនឯង។</span></li>
+  </ol>
+  <p class="note">Prefer to read before you run? The installers are short: <a href="https://daraboth.github.io/skilljmskill/install.ps1">install.ps1</a> and <a href="https://daraboth.github.io/skilljmskill/install.sh">install.sh</a>. Or copy folders by hand from <a href="https://github.com/DaraBoth/skilljmskill">the repository</a>.</p>
+
+  <h2>All skills <span class="km">skill ទាំងអស់</span></h2>
+  <section><h3>Coding and debugging <span class="km">សរសេរកូដ និងដោះស្រាយបញ្ហា</span></h3><ul class="skills"><li><button class="pick" data-name="debugging" aria-pressed="false" title="Add to my install command"><code>debugging</code></button><span>Systematic 5-step workflow (Reproduce → Isolate → Identify → Fix → Verify) for finding and fixing bugs in code.</span></li><li><button class="pick" data-name="javascript" aria-pressed="false" title="Add to my install command"><code>javascript</code></button><span>Standards and patterns for writing clean, modern JavaScript: const/let (no var), async/await over .then chains, template literals, destructuring, and core fundamentals...</span></li><li><button class="pick" data-name="java" aria-pressed="false" title="Add to my install command"><code>java</code></button><span>Standards for writing clean Java: OOP fundamentals (classes, encapsulation, inheritance, polymorphism), collections, exceptions, try-with-resources, streams, and file...</span></li><li><button class="pick" data-name="cmd" aria-pressed="false" title="Add to my install command"><code>cmd</code></button><span>Cross-platform command-line reference (bash/zsh on Linux/Mac, cmd/PowerShell on Windows) covering navigation, file management, search (grep/find/ripgrep), process mana...</span></li><li><button class="pick" data-name="devops" aria-pressed="false" title="Add to my install command"><code>devops</code></button><span>Day-to-day DevOps for solo developers and small teams: git workflow (status, branches, commits, rebase), conventional commit messages, deployment basics, environment v...</span></li><li><button class="pick" data-name="system-design" aria-pressed="false" title="Add to my install command"><code>system-design</code></button><span>Architectural thinking for small-to-medium projects: scoping MVPs, the 3-layer pattern (UI/Service/Data), data flow design, modularity, and deciding how to structure n...</span></li><li><button class="pick" data-name="code-explainer-page" aria-pressed="false" title="Add to my install command"><code>code-explainer-page</code></button><span>Explain a piece of code or a fix to its owner in one throwaway HTML page opened in the browser, in eli5 style (big pictures, few words) - picture steps drawn in inline...</span></li><li><button class="pick" data-name="project-system-map" aria-pressed="false" title="Add to my install command"><code>project-system-map</code></button><span>Build an architecture and project document for any codebase (web server, mobile app, desktop app, monorepo) as one interactive, bilingual (Korean and English) HTML pag...</span></li></ul></section>
+<section><h3>Working with AI <span class="km">ធ្វើការជាមួយ AI</span></h3><ul class="skills"><li><button class="pick" data-name="ai-usage" aria-pressed="false" title="Add to my install command"><code>ai-usage</code></button><span>Frameworks and habits for using AI coding assistants effectively: the CRISP prompt framework (Context, Role, Instruction, Specifics, Proof), when to use vs.</span></li><li><button class="pick" data-name="prompt-templates" aria-pressed="false" title="Add to my install command"><code>prompt-templates</code></button><span>Library of fill-in-the-blank prompt templates for common dev workflows: debugging, code review, refactoring, system design, learning a new concept, interview prep, and...</span></li><li><button class="pick" data-name="team-workflow" aria-pressed="false" title="Add to my install command"><code>team-workflow</code></button><span>Simulate a three-person engineering team (Alice the architect, Bob the developer, Charlie the QA/security reviewer) debating and refining a solution before producing f...</span></li><li><button class="pick" data-name="skill-creation" aria-pressed="false" title="Add to my install command"><code>skill-creation</code></button><span>Teach Claude a new permanent skill based on user-provided resources, articles, or documentation.</span></li><li><button class="pick" data-name="auto-handoff" aria-pressed="false" title="Add to my install command"><code>auto-handoff</code></button><span>Hand the current session&#x27;s work to a fresh agent session end to end.</span></li><li><button class="pick" data-name="html-work-report" aria-pressed="false" title="Add to my install command"><code>html-work-report</code></button><span>After completing a task, creates a clean, plain-English HTML report of what Claude did and opens it in the user&#x27;s browser.</span></li><li><button class="pick" data-name="second-brain" aria-pressed="false" title="Add to my install command"><code>second-brain</code></button><span>Operate as the user&#x27;s personal &quot;second brain&quot;: a compile-not-retrieve knowledge base following Andrej Karpathy&#x27;s LLM Wiki pattern.</span></li></ul></section>
+<section><h3>Design and UI <span class="km">រចនា និង UI</span></h3><ul class="skills"><li><button class="pick" data-name="frontend-design" aria-pressed="false" title="Add to my install command"><code>frontend-design</code></button><span>Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one.</span></li><li><button class="pick" data-name="ui-design-principles" aria-pressed="false" title="Add to my install command"><code>ui-design-principles</code></button><span>The seven UI design principles - hierarchy, progressive disclosure, consistency, contrast, accessibility, proximity, alignment - turned into concrete, checkable rules...</span></li><li><button class="pick" data-name="ui-color-palettes" aria-pressed="false" title="Add to my install command"><code>ui-color-palettes</code></button><span>Twelve professional UI colour palettes with full 50-900 shade scales in HSL and hex, plus semantic error/warning/success ramps, mapped directly onto shadcn CSS variabl...</span></li></ul></section>
+<section><h3>3D on the web <span class="km">3D លើវេបសាយ</span></h3><ul class="skills"><li><button class="pick" data-name="3d-web-experience" aria-pressed="false" title="Add to my install command"><code>3d-web-experience</code></button><span>Expert in building 3D experiences for the web - Three.js, React Three Fiber, Spline, WebGL, and interactive 3D scenes.</span></li><li><button class="pick" data-name="threejs-fundamentals" aria-pressed="false" title="Add to my install command"><code>threejs-fundamentals</code></button><span>Three.js scene setup: scenes and fog, cameras, the renderer and tone mapping, the animation loop, object hierarchies, transforms, core math and cleanup, on WebGL or wi...</span></li><li><button class="pick" data-name="threejs-geometry" aria-pressed="false" title="Add to my install command"><code>threejs-geometry</code></button><span>Creating and shaping three.js geometry: built-in shapes, 3D text, vertex buffers and attributes, merging, instancing, batching, point clouds and lines, on WebGL or wit...</span></li><li><button class="pick" data-name="threejs-materials" aria-pressed="false" title="Add to my install command"><code>threejs-materials</code></button><span>Choosing and configuring three.js materials - unlit, diffuse, specular, PBR, toon, point and line materials - shared properties like blending and stencil, environment...</span></li><li><button class="pick" data-name="threejs-textures" aria-pressed="false" title="Add to my install command"><code>threejs-textures</code></button><span>Three.js textures: image loading, color spaces, UV channels and transforms, texture types from canvas to HDR and KTX2, render targets, texture memory.</span></li><li><button class="pick" data-name="threejs-lighting" aria-pressed="false" title="Add to my install command"><code>threejs-lighting</code></button><span>Light types and physical units, shadow maps, HDR environment lighting, light probes, and lighting performance, on WebGL or with WebGPU and TSL.</span></li><li><button class="pick" data-name="threejs-loaders" aria-pressed="false" title="Add to my install command"><code>threejs-loaders</code></button><span>Loading three.js assets: glTF with Draco, meshopt and KTX2 compression, other model formats, textures, HDR and EXR environments, progress, caching, cloning and disposal.</span></li><li><button class="pick" data-name="threejs-animation" aria-pressed="false" title="Add to my install command"><code>threejs-animation</code></button><span>Keyframe, skeletal and morph-target animation, procedural motion and clip blending, on WebGL or with WebGPU and TSL.</span></li><li><button class="pick" data-name="threejs-interaction" aria-pressed="false" title="Add to my install command"><code>threejs-interaction</code></button><span>Picking with raycasting, camera controls, transform gizmos, drag, hover and box selection for three.js, identical under WebGL and WebGPU.</span></li><li><button class="pick" data-name="threejs-shaders" aria-pressed="false" title="Add to my install command"><code>threejs-shaders</code></button><span>Custom GLSL vertex and fragment shaders: uniforms, varyings, shader chunks, extending built-in materials, instanced attributes, plus the same effects as node materials...</span></li><li><button class="pick" data-name="threejs-postprocessing" aria-pressed="false" title="Add to my install command"><code>threejs-postprocessing</code></button><span>Three.js post-processing: composer pass chains, built-in renderer effects, and the WebGPU/TSL node pipeline: bloom, depth of field, ambient occlusion, custom screen ef...</span></li><li><button class="pick" data-name="threejs-performance" aria-pressed="false" title="Add to my install command"><code>threejs-performance</code></button><span>Measuring and optimizing three.js speed: render statistics, memory counters, fewer draw calls via merging, instancing, batching and LOD, fill rate, shadows, CPU work p...</span></li><li><button class="pick" data-name="threejs-asset-pipeline" aria-pressed="false" title="Add to my install command"><code>threejs-asset-pipeline</code></button><span>Shrinking glTF assets for three.js with gltf-transform: inspect, validate and optimize commands, Draco, meshopt and quantization, KTX2, WebP and AVIF textures, the loa...</span></li><li><button class="pick" data-name="threejs-react-three-fiber" aria-pressed="false" title="Add to my install command"><code>threejs-react-three-fiber</code></button><span>Building three.js scenes from React with React Three Fiber and drei: renderer setup, the scene graph as JSX, frame-loop, state and loading hooks, pointer events, and a...</span></li></ul></section>
+<section><h3>Study, career and your computer <span class="km">ការសិក្សា អាជីព និងកុំព្យូទ័រ</span></h3><ul class="skills"><li><button class="pick" data-name="learning" aria-pressed="false" title="Add to my install command"><code>learning</code></button><span>Fast-learning techniques tuned for ADHD brains: the 3-phase Skim/Do/Explain method, active recall, spaced repetition, and chunking overwhelming material into small steps.</span></li><li><button class="pick" data-name="productivity" aria-pressed="false" title="Add to my install command"><code>productivity</code></button><span>ADHD-friendly productivity systems: 3-level task breakdown (Project → Milestone → Task), focus techniques, priority frameworks, and beating procrastination with system...</span></li><li><button class="pick" data-name="career" aria-pressed="false" title="Add to my install command"><code>career</code></button><span>Developer career growth: technical interview prep (4-phase problem solving, LeetCode patterns), resume/portfolio improvement, behavioral questions, and planning career...</span></li><li><button class="pick" data-name="disk-cleanup" aria-pressed="false" title="Add to my install command"><code>disk-cleanup</code></button><span>Reclaim space on the Windows C: drive by clearing regenerable caches (npm, pip, temp, Windows Update, puppeteer, driver leftovers).</span></li></ul></section>
+</main>
+
+<footer><div class="wrap">
+  Free and open source. Our own skills are MIT; skills from other authors keep their own licence inside their folder. <a href="https://github.com/DaraBoth/skilljmskill">Source on GitHub</a>.
+</div></footer>
+
+<script>
+(function(){
+  var SITE='https://daraboth.github.io/skilljmskill';
+  var os='win', picked=[];
+  function cmd(names){
+    if(os==='win'){
+      return names.length ? '& ([scriptblock]::Create((irm '+SITE+'/install.ps1))) '+names.join(' ')
+                          : 'irm '+SITE+'/install.ps1 | iex';
+    }
+    return 'curl -fsSL '+SITE+'/install.sh | sh'+(names.length ? ' -s -- '+names.join(' ') : '');
+  }
+  function render(){
+    document.getElementById('cmd-all').textContent=cmd([]);
+    document.getElementById('cmd-pick').textContent=cmd(picked);
+    document.getElementById('picked').classList.toggle('on', picked.length>0);
+    document.querySelectorAll('[data-for]').forEach(function(p){p.hidden=p.getAttribute('data-for')!==os;});
+  }
+  if(/Mac|Linux|iPhone|iPad|Android/.test(navigator.platform+navigator.userAgent) && !/Windows/.test(navigator.userAgent)) os='nix';
+  document.querySelectorAll('[role=tab]').forEach(function(b){
+    b.setAttribute('aria-selected', b.dataset.os===os);
+    b.addEventListener('click',function(){
+      os=b.dataset.os;
+      document.querySelectorAll('[role=tab]').forEach(function(x){x.setAttribute('aria-selected', x===b);});
+      render();
+    });
+  });
+  document.querySelectorAll('.pick').forEach(function(b){
+    b.addEventListener('click',function(){
+      var n=b.dataset.name, i=picked.indexOf(n);
+      if(i<0) picked.push(n); else picked.splice(i,1);
+      b.setAttribute('aria-pressed', i<0);
+      render();
+    });
+  });
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=document.getElementById(b.dataset.copy).textContent;
+      (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function(){
+        b.textContent='Copied'; setTimeout(function(){b.textContent='Copy';},1600);
+      },function(){ b.textContent='Select and copy'; });
+    });
+  });
+  render();
+})();
+</script>
+</body>
+</html>

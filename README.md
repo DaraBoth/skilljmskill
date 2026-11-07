@@ -1,4 +1,4 @@
-# KH Dev Skills
+# SkillJM Skill
 
 Free [Claude Code](https://claude.com/claude-code) skills for Cambodian IT students and developers.
 Each skill is one folder you copy into Claude Code. No account, no server, no setup beyond copying.
@@ -20,6 +20,29 @@ Claude នឹងប្រើ skill ដោយខ្លួនឯង ពេលស�
 ---
 
 ## Install / របៀបដំឡើង
+
+**One command / ពាក្យបញ្ជាតែមួយ** (website: https://daraboth.github.io/skilljmskill/)
+
+```powershell
+# Windows PowerShell: every skill
+irm https://daraboth.github.io/skilljmskill/install.ps1 | iex
+
+# Windows PowerShell: only some skills
+& ([scriptblock]::Create((irm https://daraboth.github.io/skilljmskill/install.ps1))) debugging devops
+```
+
+```bash
+# Mac / Linux: every skill
+curl -fsSL https://daraboth.github.io/skilljmskill/install.sh | sh
+
+# Mac / Linux: only some skills
+curl -fsSL https://daraboth.github.io/skilljmskill/install.sh | sh -s -- debugging devops
+```
+
+Run it again any time to update. Skills you already had are moved to `.skilljmskill-backup`, never deleted.
+Then restart Claude Code. Prefer to do it by hand? Follow the steps below.
+
+**By hand / ដោយដៃ**
 
 1. Download this repository (green **Code** button, then **Download ZIP**) and unzip it,
    or run `git clone <this repo url>`.
