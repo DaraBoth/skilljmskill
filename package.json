@@ -1,0 +1,14 @@
+{
+  "name": "skilljmskill",
+  "version": "1.0.0",
+  "description": "Free skills for AI coding tools (Claude Code, Codex, Gemini CLI, Copilot, Cursor, OpenCode), made for Cambodian IT students and developers. You pick the skills, the tool and the place.",
+  "type": "module",
+  "bin": { "skilljmskill": "bin/skilljmskill.mjs" },
+  "files": ["bin/", "skills/", "README.md", "LICENSE"],
+  "engines": { "node": ">=18" },
+  "keywords": ["claude-code", "claude-skills", "agent-skills", "codex", "gemini-cli", "copilot", "cursor", "opencode", "cambodia", "khmer"],
+  "homepage": "https://daraboth.github.io/skilljmskill/",
+  "repository": { "type": "git", "url": "git+https://github.com/DaraBoth/skilljmskill.git" },
+  "bugs": { "url": "https://github.com/DaraBoth/skilljmskill/issues" },
+  "license": "SEE LICENSE IN LICENSE"
+}

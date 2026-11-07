@@ -21,34 +21,39 @@ Claude នឹងប្រើ skill ដោយខ្លួនឯង ពេលស�
 
 ## Install / របៀបដំឡើង
 
-**One command / ពាក្យបញ្ជាតែមួយ** (website: https://daraboth.github.io/skilljmskill/)
-
-```powershell
-# Windows PowerShell: every skill
-irm https://daraboth.github.io/skilljmskill/install.ps1 | iex
-
-# Windows PowerShell: only some skills
-& ([scriptblock]::Create((irm https://daraboth.github.io/skilljmskill/install.ps1))) debugging devops
-```
+**One command, you choose everything / ពាក្យបញ្ជាតែមួយ អ្នកជ្រើសរើសទាំងអស់**
 
 ```bash
-# Mac / Linux: every skill
-curl -fsSL https://daraboth.github.io/skilljmskill/install.sh | sh
-
-# Mac / Linux: only some skills
-curl -fsSL https://daraboth.github.io/skilljmskill/install.sh | sh -s -- debugging devops
+npx skilljmskill
 ```
 
-It shows every skill with a short description, marks the ones it recommends for the folder you are in,
-then asks which skills (Enter = recommended) and where: for you in every project (`~/.claude/skills`)
-or only this project (`.claude/skills`, commit it to share with your team).
-Skip the questions with `--list`, `--all`, `--recommended`, `--user`, `--project`, `--yes`
-(Windows: `-List`, `-All`, `-Recommended`, `-User`, `-Project`, `-Yes`).
+No Node.js? Use `irm https://daraboth.github.io/skilljmskill/install.ps1 | iex` (Windows PowerShell)
+or `curl -fsSL https://daraboth.github.io/skilljmskill/install.sh | sh` (Mac / Linux). Both open the
+same chooser (it needs Node.js 18+; without it they only list the skills and install nothing).
 
-វាបង្ហាញ skill ទាំងអស់ ណែនាំ skill ដែលសមនឹង project ហើយសួរថា ដំឡើងសម្រាប់ខ្លួនអ្នក ឬសម្រាប់តែ project នេះ។
+Nothing is installed until you choose. The menu asks three things, then shows the exact folders and
+asks you to confirm:
 
-Run it again any time to update. Skills you already had are moved to `.skilljmskill-backup`, never deleted.
-Then restart Claude Code. Prefer to do it by hand? Follow the steps below.
+1. **Which skills:** tick them in a list with a short description of each (arrow keys, space, enter).
+2. **Which AI tool:** Claude Code, OpenAI Codex, Gemini CLI, GitHub Copilot, Cursor, OpenCode, or
+   type the folder of another tool.
+3. **Where:** this project only, or you, in every project.
+
+| Tool | This project | You, every project |
+|---|---|---|
+| Claude Code | `.claude/skills` | `~/.claude/skills` |
+| OpenAI Codex | `.agents/skills` | `~/.agents/skills` |
+| Gemini CLI | `.gemini/skills` | `~/.gemini/skills` |
+| GitHub Copilot | `.github/skills` | `~/.copilot/skills` |
+| Cursor | `.cursor/skills` | `~/.cursor/skills` |
+| OpenCode | `.opencode/skills` | `~/.config/opencode/skills` |
+
+Without questions: `npx skilljmskill --skills debugging,devops --agent claude,codex --scope project --yes`.
+`npx skilljmskill --list` shows every skill and installs nothing. A skill you already had is moved to
+`.skilljmskill-backup`, never deleted. No telemetry, nothing is sent anywhere.
+
+ម៉ឺនុយនឹងសួរ៖ ជ្រើស skill, ជ្រើសកម្មវិធី AI ដែលអ្នកប្រើ, ហើយជ្រើសថា ដំឡើងក្នុង project នេះ ឬសម្រាប់ខ្លួនអ្នក។
+គ្មានអ្វីត្រូវបានដំឡើងទេ រហូតដល់អ្នកយល់ព្រម។
 
 **By hand / ដោយដៃ**
 
