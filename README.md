@@ -39,6 +39,14 @@ curl -fsSL https://daraboth.github.io/skilljmskill/install.sh | sh
 curl -fsSL https://daraboth.github.io/skilljmskill/install.sh | sh -s -- debugging devops
 ```
 
+It shows every skill with a short description, marks the ones it recommends for the folder you are in,
+then asks which skills (Enter = recommended) and where: for you in every project (`~/.claude/skills`)
+or only this project (`.claude/skills`, commit it to share with your team).
+Skip the questions with `--list`, `--all`, `--recommended`, `--user`, `--project`, `--yes`
+(Windows: `-List`, `-All`, `-Recommended`, `-User`, `-Project`, `-Yes`).
+
+វាបង្ហាញ skill ទាំងអស់ ណែនាំ skill ដែលសមនឹង project ហើយសួរថា ដំឡើងសម្រាប់ខ្លួនអ្នក ឬសម្រាប់តែ project នេះ។
+
 Run it again any time to update. Skills you already had are moved to `.skilljmskill-backup`, never deleted.
 Then restart Claude Code. Prefer to do it by hand? Follow the steps below.
 
