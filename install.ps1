@@ -3,7 +3,7 @@
 #   irm https://daraboth.github.io/skilljmskill/install.ps1 | iex
 #
 # This only downloads the pack to a temporary folder and opens the chooser. You pick the skills,
-# your AI tool and where; nothing is installed until you confirm. Same as: npx skilljmskill
+# your AI tool and where; nothing is installed until you confirm. Options pass through, see --help
 $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
 $Repo = 'DaraBoth/skilljmskill'

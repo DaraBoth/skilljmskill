@@ -4,7 +4,7 @@
 #   curl -fsSL https://daraboth.github.io/skilljmskill/install.sh | sh
 #
 # This only downloads the pack to a temporary folder and opens the chooser. You pick the skills,
-# your AI tool and where; nothing is installed until you confirm. Same as: npx skilljmskill
+# your AI tool and where; nothing is installed until you confirm. Options pass through, see --help
 # Options are passed through:  ... | sh -s -- --list
 set -eu
 

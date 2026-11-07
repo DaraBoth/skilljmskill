@@ -134,12 +134,10 @@ footer{margin:56px 0 40px;padding-top:20px;border-top:1px solid var(--line);colo
 <main class="wrap">
   <h2>Install <span class="km">ដំឡើង</span></h2>
   <div class="tabs" role="tablist" aria-label="Your computer">
-    <button role="tab" data-os="npx" aria-selected="true">npx (Node.js)</button>
-    <button role="tab" data-os="win" aria-selected="false">Windows</button>
+    <button role="tab" data-os="win" aria-selected="true">Windows</button>
     <button role="tab" data-os="nix" aria-selected="false">Mac / Linux</button>
   </div>
-  <p class="note" data-for="npx">Any computer with <a href="https://nodejs.org">Node.js</a> 18+. Open a terminal and paste this. <span class="km">កុំព្យូទ័រណាក៏បាន ដែលមាន Node.js។</span></p>
-  <p class="note" data-for="win" hidden>Open <b>PowerShell</b> and paste this. <span class="km">បើក PowerShell ហើយបិទភ្ជាប់ពាក្យបញ្ជានេះ។</span></p>
+  <p class="note" data-for="win">Open <b>PowerShell</b> and paste this. <span class="km">បើក PowerShell ហើយបិទភ្ជាប់ពាក្យបញ្ជានេះ។</span></p>
   <p class="note" data-for="nix" hidden>Open <b>Terminal</b> and paste this. <span class="km">បើក Terminal ហើយបិទភ្ជាប់ពាក្យបញ្ជានេះ។</span></p>
   <div class="cmd"><code id="cmd-all"></code><button class="copy" data-copy="cmd-all">Copy</button></div>
 
@@ -147,7 +145,7 @@ footer{margin:56px 0 40px;padding-top:20px;border-top:1px solid var(--line);colo
     <h3>Only the skills you picked <span class="km">តែ skill ដែលអ្នកបានជ្រើស</span></h3>
     <div class="cmd"><code id="cmd-pick"></code><button class="copy" data-copy="cmd-pick">Copy</button></div>
   </div>
-  <p class="note"><b>Nothing is installed until you choose.</b> The command opens a menu in your terminal: (1) tick the skills you want from the list, each with a short description; (2) tick the AI tool you use: Claude Code, Codex, Gemini CLI, GitHub Copilot, Cursor, OpenCode, or type another tool's folder; (3) pick <b>this project</b> or <b>me, every project</b>. It shows exactly which folders it will write to and asks you to confirm.<br>
+  <p class="note"><b>Nothing is installed until you choose.</b> It needs <a href="https://nodejs.org">Node.js</a> 18 or newer. The command opens a menu in your terminal: (1) tick the skills you want from the list, each with a short description; (2) tick the AI tool you use: Claude Code, Codex, Gemini CLI, GitHub Copilot, Cursor, OpenCode, or type another tool's folder; (3) pick <b>this project</b> or <b>me, every project</b>. It shows exactly which folders it will write to and asks you to confirm.<br>
   <span class="km">គ្មានអ្វីត្រូវបានដំឡើងទេ រហូតដល់អ្នកជ្រើសរើស៖ ជ្រើស skill ជ្រើសកម្មវិធី AI ដែលអ្នកប្រើ ហើយជ្រើសថា ដំឡើងក្នុង project នេះ ឬសម្រាប់ខ្លួនអ្នក។</span></p>
   <p class="note">Already know what you want? Click skill names below to pre-tick them in the command. Running it again updates the skills; your older copies are moved to <code>.skilljmskill-backup</code>, never deleted.<br>
   <span class="km">ចង់បានតែខ្លះ? ចុចឈ្មោះ skill ខាងក្រោម ដើម្បីបង្កើតពាក្យបញ្ជារបស់អ្នក។</span></p>
@@ -171,13 +169,12 @@ footer{margin:56px 0 40px;padding-top:20px;border-top:1px solid var(--line);colo
 <script>
 (function(){
   var SITE='{{SITE}}';
-  var os='npx', picked=[];
+  var os=/Windows/.test(navigator.userAgent)||!/Mac|Linux|Android|iPhone|iPad/.test(navigator.userAgent)?'win':'nix', picked=[];
   function cmd(names){
     if(os==='win'){
       return names.length ? '& ([scriptblock]::Create((irm '+SITE+'/install.ps1))) --skills '+names.join(',')
                           : 'irm '+SITE+'/install.ps1 | iex';
     }
-    if(os==='npx') return 'npx skilljmskill'+(names.length ? ' --skills '+names.join(',') : '');
     return 'curl -fsSL '+SITE+'/install.sh | sh'+(names.length ? ' -s -- --skills '+names.join(',') : '');
   }
   function render(){

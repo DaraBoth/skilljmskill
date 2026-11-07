@@ -23,13 +23,17 @@ Claude នឹងប្រើ skill ដោយខ្លួនឯង ពេលស�
 
 **One command, you choose everything / ពាក្យបញ្ជាតែមួយ អ្នកជ្រើសរើសទាំងអស់**
 
-```bash
-npx skilljmskill
+```powershell
+# Windows PowerShell
+irm https://daraboth.github.io/skilljmskill/install.ps1 | iex
 ```
 
-No Node.js? Use `irm https://daraboth.github.io/skilljmskill/install.ps1 | iex` (Windows PowerShell)
-or `curl -fsSL https://daraboth.github.io/skilljmskill/install.sh | sh` (Mac / Linux). Both open the
-same chooser (it needs Node.js 18+; without it they only list the skills and install nothing).
+```bash
+# Mac / Linux
+curl -fsSL https://daraboth.github.io/skilljmskill/install.sh | sh
+```
+
+It needs Node.js 18+ (https://nodejs.org). Without it, the command only lists the skills and installs nothing.
 
 Nothing is installed until you choose. The menu asks three things, then shows the exact folders and
 asks you to confirm:
@@ -48,8 +52,8 @@ asks you to confirm:
 | Cursor | `.cursor/skills` | `~/.cursor/skills` |
 | OpenCode | `.opencode/skills` | `~/.config/opencode/skills` |
 
-Without questions: `npx skilljmskill --skills debugging,devops --agent claude,codex --scope project --yes`.
-`npx skilljmskill --list` shows every skill and installs nothing. A skill you already had is moved to
+Without questions, add options after the command, for example `... | sh -s -- --skills debugging,devops --agent claude --scope project --yes`.
+`--list` shows every skill and installs nothing. A skill you already had is moved to
 `.skilljmskill-backup`, never deleted. No telemetry, nothing is sent anywhere.
 
 ម៉ឺនុយនឹងសួរ៖ ជ្រើស skill, ជ្រើសកម្មវិធី AI ដែលអ្នកប្រើ, ហើយជ្រើសថា ដំឡើងក្នុង project នេះ ឬសម្រាប់ខ្លួនអ្នក។

@@ -65,8 +65,8 @@ function args(argv) {
 const HELP = `
 ${c.b('skilljmskill')} ${VERSION}  free skills for AI coding tools, from Cambodia
 
-  npx skilljmskill                 choose skills, your AI tool and where, step by step
-  npx skilljmskill --list          show every skill, install nothing
+  install command                 choose skills, your AI tool and where, step by step
+  ... --list                show every skill, install nothing
 
   Without questions (all three are needed, nothing has a default):
   --skills <a,b>     skill names from --list
@@ -180,7 +180,7 @@ async function main() {
   if (o.list) {
     const w = Math.max(...all.map(s => s.id.length));
     all.forEach(s => console.log(`${c.b(s.id.padEnd(w))}  ${c.d(fit(s.desc, (process.stdout.columns || 120) - w - 3))}`));
-    console.log(c.d(`\n${all.length} skills. Install some with: npx skilljmskill`));
+    console.log(c.d(`\n${all.length} skills. Install some with the command on https://daraboth.github.io/skilljmskill/`));
     return;
   }
 
@@ -188,7 +188,7 @@ async function main() {
   if (!tty && !(o.skills && (o.dir || (o.agents && o.scope)))) {
     console.error('This terminal cannot show the menu, and nothing is installed without your choice.');
     console.error('Name the skills, the AI tool and where yourself, for example:');
-    console.error('  npx skilljmskill --skills debugging,devops --agent claude --scope project --yes');
+    console.error('  ... --skills debugging,devops --agent claude --scope project --yes');
     process.exit(1);
   }
 
