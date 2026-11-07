@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "title": "Cart total: the discount was counted twice",
+    "subtitle": "The fix changes 1 line and adds 1 comment line. Look at the 3 pictures, then the green lines.",
+    "slug": "cart-discount-twice",
+    "repo": "my-shop",
+    "branch": "fix/cart-discount",
+    "date": "2026-01-15"
+  },
+  "bigPicture": [
+    {
+      "title": "The total was too low",
+      "text": "A 10 dollar shirt with a 2 dollar discount showed 6 dollars, not 8.",
+      "svg": "<svg viewBox='0 0 260 190' xmlns='http://www.w3.org/2000/svg'><rect x='4' y='4' width='252' height='182' rx='12' fill='#fff' stroke='#cfd6e4' stroke-width='2'/><text x='20' y='34' font-size='14' font-weight='700' fill='#1d2433'>Cart</text><text x='20' y='70' font-size='12' fill='#1d2433'>Shirt</text><text x='200' y='70' font-size='12' fill='#1d2433'>$10</text><text x='20' y='96' font-size='12' fill='#1d2433'>Discount</text><text x='200' y='96' font-size='12' fill='#1d2433'>-$2</text><line x1='20' y1='112' x2='240' y2='112' stroke='#cfd6e4'/><text x='20' y='140' font-size='13' font-weight='700' fill='#1d2433'>Total</text><text x='196' y='140' font-size='13' font-weight='700' fill='#e5484d'>$6</text><circle cx='206' cy='136' r='18' fill='none' stroke='#e5484d' stroke-width='3'/></svg>"
+    },
+    {
+      "title": "The discount ran two times",
+      "text": "The price already had the discount, then the total took it off again.",
+      "svg": "<svg viewBox='0 0 260 190' xmlns='http://www.w3.org/2000/svg'><rect x='4' y='4' width='252' height='182' rx='12' fill='#f7f8fb' stroke='#cfd6e4' stroke-width='2'/><rect x='20' y='70' width='60' height='40' rx='8' fill='#d9f0fb'/><text x='34' y='95' font-size='12'>$10</text><rect x='100' y='70' width='60' height='40' rx='8' fill='#ffe3e3'/><text x='112' y='95' font-size='12'>-$2</text><rect x='180' y='70' width='60' height='40' rx='8' fill='#ffe3e3'/><text x='192' y='95' font-size='12'>-$2</text><text x='100' y='140' font-size='12' font-weight='700' fill='#e5484d'>twice</text></svg>"
+    },
+    {
+      "title": "The fix",
+      "text": "The total now starts from the full price, so the discount runs once.",
+      "svg": "<svg viewBox='0 0 260 190' xmlns='http://www.w3.org/2000/svg'><rect x='4' y='4' width='252' height='182' rx='12' fill='#fff' stroke='#cfd6e4' stroke-width='2'/><rect x='30' y='70' width='70' height='40' rx='8' fill='#d9f0fb'/><text x='48' y='95' font-size='12'>$10</text><rect x='120' y='70' width='60' height='40' rx='8' fill='#ffe3e3'/><text x='132' y='95' font-size='12'>-$2</text><text x='196' y='96' font-size='14' font-weight='700' fill='#1f9d55'>= $8</text></svg>"
+    }
+  ],
+  "files": [
+    {
+      "path": "src/cart.js",
+      "language": "javascript",
+      "startLine": 1,
+      "code": "export function cartTotal(items, discount) {\n  // Use the full price; the discount is taken off once, below.\n  const subtotal = items.reduce((sum, item) => sum + item.price * item.qty, 0);\n  const total = subtotal - discount;\n  return Math.max(total, 0);\n}",
+      "added": [2, 3],
+      "removed": [ { "after": 1, "text": "  const subtotal = items.reduce((sum, item) => sum + item.salePrice * item.qty, 0);" } ]
+    }
+  ],
+  "notes": [
+    { "file": 0, "lines": [3, 3], "kind": "fix", "title": "Start from the full price", "body": "`item.price` is the price before any discount. The old line used `salePrice`, which already had the discount inside." },
+    { "file": 0, "lines": [2, 2], "kind": "why", "title": "A comment for the next person", "body": "Says in plain words why the full price is used, so nobody changes it back." },
+    { "file": 0, "lines": [4, 4], "kind": "what", "title": "Discount taken off once", "body": "This line did not change. It is now the only place the discount is used." },
+    { "file": 0, "lines": [5, 5], "kind": "risk", "title": "Never below zero", "body": "If a discount is bigger than the cart, the total shows 0, not a negative number." }
+  ],
+  "checks": [
+    { "status": "pass", "label": "Shirt $10 with $2 discount", "detail": "cartTotal([{price:10, qty:1}], 2) returns 8 (test: cart.test.js)." },
+    { "status": "pass", "label": "Every caller passes the full price", "detail": "Searched for cartTotal: 2 callers, both pass items with price." },
+    { "status": "warn", "label": "Old saved carts", "detail": "Not checked: carts saved before this fix may still store salePrice only." }
+  ],
+  "glossary": [
+    { "term": "subtotal", "meaning": "Total before the discount." },
+    { "term": "reduce", "meaning": "Adds up every item in a list." }
+  ]
+}

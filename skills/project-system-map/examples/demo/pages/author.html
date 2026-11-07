@@ -1,0 +1,23 @@
+  <p class="lead ko" lang="ko">문서를 쓰는 에이전트의 길이에요. 검사 두 개와 브라우저 확인이 갈림길이고, 실패하면 고친 뒤 같은 검사를 다시 돌려요.</p>
+  <p class="lead en" lang="en">The writing agent's path. Two checks and a browser look are the branches; on a failure it fixes the problem and runs the same check again.</p>
+
+  <div class="figure" data-map="author">
+    <div class="cap">
+      <span class="ko">마름모는 갈림길, 회색 테두리 상자는 끝이에요.</span>
+      <span class="en">Diamonds are decisions; the grey-bordered box is the end.</span>
+    </div>
+  </div>
+
+  <div class="notes">
+    <h2><span class="ko">모든 갈림길</span><span class="en">Every branch</span></h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th><span class="ko">이럴 때</span><span class="en">When</span></th><th><span class="ko">일어나는 일</span><span class="en">What happens</span></th></tr></thead>
+      <tbody>
+        <tr><td><span class="ko">인용 문제가 있음</span><span class="en">cite problems</span></td><td><span class="ko">줄 번호를 다시 찾고 check-cites 를 다시 돌려요.</span><span class="en">Find the lines again and rerun check-cites.</span></td></tr>
+        <tr><td><span class="ko">커밋이 push 되지 않음</span><span class="en">commit not pushed</span></td><td><span class="ko">문제로 세요. push 된 커밋을 고르거나 push 를 부탁해요 (<a data-cite="scripts/check-cites.mjs:43-44"></a>).</span><span class="en">Counts as a problem. Pick a pushed commit or ask for a push (<a data-cite="scripts/check-cites.mjs:43-44"></a>).</span></td></tr>
+        <tr><td><span class="ko">설명이 빈 항목이 있음</span><span class="en">items without an explanation</span></td><td><span class="ko">map-explain.mjs 에 채우고 find-empty 를 다시 돌려요.</span><span class="en">Fill them in map-explain.mjs and rerun find-empty.</span></td></tr>
+        <tr><td><span class="ko">글자가 겹침</span><span class="en">labels overlap</span></td><td><span class="ko">선의 at, side, offset 을 바꾸고 다시 봐요.</span><span class="en">Change the edge's at, side or offset and look again.</span></td></tr>
+        <tr><td><span class="ko">다 통과함</span><span class="en">everything passes</span></td><td><span class="ko">빌드하고 게시한 뒤 담당자에게 보고해요.</span><span class="en">Build, publish and report to the owner.</span></td></tr>
+      </tbody>
+    </table></div>
+  </div>
