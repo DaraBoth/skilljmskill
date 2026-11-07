@@ -18,7 +18,7 @@ GROUPS = [
     ('Coding and debugging', 'សរសេរកូដ និងដោះស្រាយបញ្ហា',
      ['debugging', 'javascript', 'java', 'cmd', 'devops', 'system-design', 'code-explainer-page', 'project-system-map']),
     ('Working with AI', 'ធ្វើការជាមួយ AI',
-     ['ai-usage', 'prompt-templates', 'team-workflow', 'skill-creation', 'auto-handoff', 'html-work-report', 'second-brain']),
+     ['ai-usage', 'prompt-templates', 'team-workflow', 'skill-creation', 'auto-handoff', 'talk-to-sessions', 'html-work-report', 'second-brain']),
     ('Design and UI', 'រចនា និង UI',
      ['frontend-design', 'ui-design-principles', 'ui-color-palettes']),
     ('3D on the web', '3D លើវេបសាយ',
