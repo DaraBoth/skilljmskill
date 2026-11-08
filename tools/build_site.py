@@ -19,6 +19,8 @@ GROUPS = [
      ['debugging', 'javascript', 'java', 'cmd', 'devops', 'system-design', 'code-explainer-page', 'project-system-map']),
     ('Working with AI', 'ធ្វើការជាមួយ AI',
      ['ai-usage', 'prompt-templates', 'team-workflow', 'skill-creation', 'auto-handoff', 'talk-to-sessions', 'orbit-task', 'html-work-report', 'second-brain']),
+    ('An AI team on Orbit', 'ក្រុម AI លើ Orbit',
+     ['pm-loop', 'dev-loop', 'review-loop', 'qa-loop', 'customer-loop']),
     ('Design and UI', 'រចនា និង UI',
      ['frontend-design', 'ui-design-principles', 'ui-color-palettes']),
     ('3D on the web', '3D លើវេបសាយ',

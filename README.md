@@ -142,6 +142,20 @@ skill ខ្លះត្រូវការកម្មវិធីបន្ថ�
 | `productivity` | Break a project into milestones and tasks, focus techniques, and simple priorities. | បំបែកគម្រោងជាជំហាន និងការងារតូចៗ បច្ចេកទេសផ្ដោតអារម្មណ៍ និងអាទិភាព។ |
 | `career` | Developer career help: interview practice, resume, portfolio. | ជំនួយអាជីព developer៖ ហាត់សម្ភាសន៍ CV និង portfolio។ |
 
+### An AI team on Orbit / ក្រុម AI លើ Orbit
+
+Five agents that work together through one Orbit board, each in its own terminal. You answer their questions from your phone. Set up Orbit with the `orbit-task` skill first.
+
+| Skill | What it does | ខ្មែរ |
+|---|---|---|
+| `pm-loop` | Plans a feature as small phases, sends finished work to review, ships after your yes. Never writes code. | រៀបចំផែនការ feature ជាជំហានតូចៗ ហើយ ship បន្ទាប់ពីអ្នកយល់ព្រម។ |
+| `dev-loop` | Builds the cards one at a time, proves each works, commits locally. Never pushes. | សរសេរកូដម្តងមួយកាត បង្ហាញថាវាដំណើរការ ហើយ commit។ |
+| `review-loop` | Reviews each batch of commits for bugs and security holes: PASS or exact fix cards. | ពិនិត្យកូដរកកំហុស និងបញ្ហាសុវត្ថិភាព។ |
+| `qa-loop` | Tests approved work like a real user, before and after shipping, and files clear bug cards. | សាកល្បងដូចអ្នកប្រើពិត ហើយរាយការណ៍កំហុស។ |
+| `customer-loop` | Turns what users say into ranked cards and drafts replies for you to send. | ប្រែមតិអ្នកប្រើទៅជាការងារ ហើយព្រាងចម្លើយឲ្យអ្នកផ្ញើ។ |
+
+Start: `/pm-loop <your feature idea>` in one terminal, `/loop /dev-loop` in another, then `/loop /review-loop` and `/loop /qa-loop`.
+
 ### Design and UI / ការរចនា និង UI
 
 | Skill | What it does | ធ្វើអ្វី |
