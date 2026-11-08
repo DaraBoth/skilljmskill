@@ -101,7 +101,7 @@ Copy-Item -Recurse skills\* "$env:USERPROFILE\.claude\skills\"
 4. វាយ `/` ក្នុង Claude Code ដើម្បីមើលថា skill បានចូលហើយឬនៅ។
 
 Some skills need extra tools: `code-explainer-page` and `project-system-map` need
-[Node.js](https://nodejs.org) 18+ and `git`; `disk-cleanup` is Windows only (PowerShell).
+[Node.js](https://nodejs.org) 18+ and `git`; `disk-cleanup` is Windows only (PowerShell), and `computer-control` runs on Windows and macOS.
 
 skill ខ្លះត្រូវការកម្មវិធីបន្ថែម៖ `code-explainer-page` និង `project-system-map` ត្រូវការ Node.js 18+ និង git។
 `disk-cleanup` ប្រើបានតែលើ Windows ប៉ុណ្ណោះ។
@@ -131,6 +131,7 @@ skill ខ្លះត្រូវការកម្មវិធីបន្ថ�
 | `skill-creation` | Teaches Claude a new skill from an article or docs you give it. | បង្រៀន Claude នូវ skill ថ្មី ពីអត្ថបទ ឬឯកសារដែលអ្នកផ្ដល់ឲ្យ។ |
 | `second-brain` | Turns your notes and articles into a linked Markdown wiki (the "LLM Wiki" idea). | ប្តូរកំណត់ត្រា និងអត្ថបទរបស់អ្នក ទៅជា wiki Markdown ដែលភ្ជាប់គ្នា។ |
 | `disk-cleanup` | Frees space on the Windows C: drive by clearing caches. Scans first, deletes only after you say yes. | សម្អាត cache លើ drive C: របស់ Windows។ ស្កេនមុន លុបតែពេលអ្នកយល់ព្រម។ |
+| `computer-control` | Lets any AI control your Windows or Mac from the shell: apps, Settings, volume, camera, Wi-Fi, Bluetooth, clicking buttons by name, typing Khmer or Korean, sleep and wake up later. No app to install. | ឲ្យ AI បញ្ជាកុំព្យូទ័រ Windows ឬ Mac របស់អ្នក៖ បើកកម្មវិធី ការកំណត់ សំឡេង កាមេរ៉ា Wi-Fi Bluetooth ចុចប៊ូតុង វាយអក្សរខ្មែរ និងដេករួចភ្ញាក់ឡើងវិញ។ មិនចាំបាច់ដំឡើងកម្មវិធី។ |
 
 ### Study and career / ការសិក្សា និងអាជីព
 
@@ -193,6 +194,7 @@ Type the request in plain words. Claude picks the skill, or you can call it with
 | `skill-creation` | "Learn this article as a new skill: <paste link or text>." |
 | `second-brain` | "Ingest this article into my second brain." / "What does my wiki say about Docker?" |
 | `disk-cleanup` | "My C: drive is full. Free up space." |
+| `computer-control` | "Turn the volume down and open Bluetooth settings." / "បិទកាមេរ៉ា" / "Sleep and wake up in 5 hours." |
 | `learning` | "Teach me Git branches in the fastest way." |
 | `productivity` | "Break my final-year project into tasks for the next 4 weeks." |
 | `career` | "Help me prepare for a junior web developer interview." |

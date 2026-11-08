@@ -26,7 +26,7 @@ GROUPS = [
       'threejs-lighting', 'threejs-loaders', 'threejs-animation', 'threejs-interaction', 'threejs-shaders',
       'threejs-postprocessing', 'threejs-performance', 'threejs-asset-pipeline', 'threejs-react-three-fiber']),
     ('Study, career and your computer', 'ការសិក្សា អាជីព និងកុំព្យូទ័រ',
-     ['learning', 'productivity', 'career', 'disk-cleanup']),
+     ['learning', 'productivity', 'career', 'disk-cleanup', 'computer-control']),
 ]
 
 
