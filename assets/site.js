@@ -11,6 +11,23 @@
   var live = $('#live');
   function say(t) { if (live) { live.textContent = ''; setTimeout(function () { live.textContent = t; }, 30); } }
 
+  /* GitHub star count (cached for an hour; the button works without it) */
+  (function () {
+    var els = $$('[data-stars]'); if (!els.length) return;
+    function show(n) {
+      if (typeof n !== 'number') return;
+      var t = n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k' : String(n);
+      els.forEach(function (e) { e.textContent = t; e.hidden = false; });
+    }
+    var c = null; try { c = JSON.parse(store.get('sjm-stars') || 'null'); } catch (e) {}
+    if (c) show(c.n);
+    if (c && Date.now() - c.t < 36e5) return;
+    if (!window.fetch) return;
+    fetch('https://api.github.com/repos/DaraBoth/skilljmskill').then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) { if (d && typeof d.stargazers_count === 'number') { show(d.stargazers_count); store.set('sjm-stars', JSON.stringify({ n: d.stargazers_count, t: Date.now() })); } })
+      .catch(function () {});
+  })();
+
   /* Light or dark */
   $$('.theme').forEach(function (b) {
     b.addEventListener('click', function () {
