@@ -117,6 +117,7 @@ skill ខ្លះត្រូវការកម្មវិធីបន្ថ�
 | `code-explainer-page` | Explains a code change or fix in one local HTML page: pictures, a code view with green/red lines, notes and checks. | ពន្យល់ការកែកូដ ក្នុងទំព័រ HTML មួយ មានរូបភាព កូដ កំណត់ចំណាំ និងការត្រួតពិនិត្យ។ |
 | `auto-handoff` | Hands the current session's work to a fresh Claude session when the conversation gets too big. | ប្រគល់ការងារពី session បច្ចុប្បន្ន ទៅ session ថ្មី ពេលការសន្ទនាវែងពេក។ |
 | `talk-to-sessions` | Finds your other running Claude Code sessions, reads what they did, messages them, and lets you watch them from your phone. | រក session Claude Code ផ្សេងទៀតដែលកំពុងដំណើរការ ផ្ញើសារទៅពួកវា ហើយមើលពីទូរស័ព្ទ។ |
+| `orbit-task` | Works a bug or feature card from an Orbit board end to end, one agent per task: read, branch, fix, test, PR, close, asking you on your phone at every step others will see. Includes setting up Orbit for free. | ធ្វើការងារពីកាត Orbit ពីដើមដល់ចប់ មួយ agent មួយការងារ៖ អាន បង្កើត branch កែ សាកល្បង PR និងបិទ ដោយសួរអ្នកតាមទូរស័ព្ទនៅរាល់ជំហានសំខាន់។ មានរបៀបដំឡើង Orbit ដោយឥតគិតថ្លៃ។ |
 | `html-work-report` | After a task, writes a short plain-English HTML report of what was done and opens it in the browser. | ក្រោយធ្វើការងាររួច បង្កើតរបាយការណ៍ HTML ខ្លី ងាយអាន ហើយបើកវាក្នុង browser។ |
 | `project-system-map` | Builds one interactive architecture document for any codebase: diagrams, API, database tab, offline file. | បង្កើតឯកសារស្ថាបត្យកម្មមួយ សម្រាប់ codebase ណាមួយ៖ diagram, API, database និងឯកសារ offline។ |
 | `debugging` | A 5-step way to find bugs: reproduce, isolate, identify, fix, verify. No guessing. | វិធី ៥ ជំហានរក bug៖ បង្កើតឡើងវិញ ញែក រកមូលហេតុ កែ និងផ្ទៀងផ្ទាត់។ មិនទាយ។ |
@@ -180,6 +181,7 @@ Type the request in plain words. Claude picks the skill, or you can call it with
 | `code-explainer-page` | "Explain the last commit to me in a web page." |
 | `auto-handoff` | "My context is too big. Hand off to a fresh session." |
 | `talk-to-sessions` | "Tell the agent in the other terminal that the API key is ready." |
+| `orbit-task` | "Set up Orbit for me." / "Work the next bug on my Orbit board." |
 | `html-work-report` | "Install Tailwind in this project, then give me an HTML work report." |
 | `project-system-map` | "Make a system map of this repo so a new developer understands everything." |
 | `debugging` | "Debug this: `TypeError: Cannot read properties of undefined (reading 'map')`." |
